@@ -1,0 +1,65 @@
+\documentclass[paper=a4, fontsize=12pt, toc=bibliography]{scrartcl}
+
+%Standart
+\usepackage[utf8]{inputenc}								%Zeichenkodierung, u.u. für Umlaute 
+\usepackage[ngerman]{babel}								%Silbentrennung
+\usepackage[T1]{fontenc}								%
+\usepackage{color}										%Text kann farbig dargestellt werden
+\usepackage{amssymb}									%Mathematische Symbole
+\usepackage{amsthm}										%Mathematische Umgebeungen
+\usepackage{graphicx}									%Bilder und PDFs
+\usepackage[hidelinks=true]{hyperref}					%Hyperlinks ohne Markierung
+\usepackage{booktabs}									%bessere Tabellen
+\usepackage[german=quotes]{csquotes} 					%correct quotes using \enquote{}
+\usepackage[final]{microtype}							%Microtype (bessere darstellung der Wörter)
+\usepackage{todonotes}									%To do Comments
+\usepackage{float}										%Figure placement
+\usepackage[parfill]{parskip}							%No indent after line break
+\usepackage{lipsum}    									%Blindtext
+\usepackage{graphicx} 									%Use various graphics formats
+\usepackage[german]{varioref} 							%Nicer references \vref
+\usepackage{caption}									%better Captions
+\usepackage{booktabs} 									%Nicer Tabs
+\usepackage{array}										%
+
+%ALGORITHMS
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
+\floatname{algorithm}{Algorithmus}
+
+%Seitennummerierung
+\usepackage{scrlayer-scrpage}
+\pagestyle{scrheadings}
+\clearpairofpagestyles
+\ofoot{\pagemark}	
+
+%Zitierung
+\usepackage[backend=biber, autocite=footnote, style=authoryear, dashed=false]{biblatex}
+\setlength{\bibparsep}{\parskip}						%add space between biblatex entries in the bibliography
+\addbibresource{literatur/Literatur.bib}				%Add file bibliography.bib as biblatex resource
+
+%Abkürzungsverzeichnis
+\usepackage[printonlyused]{acronym}
+
+%Formatierung
+\linespread{1.4}										%Zeilenabstand		
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}	
+\usepackage{subfigure}
+\usepackage[paper=a4paper, left={2.5cm}, right={2.5cm}, top={2.5cm}]{geometry}
+%\setcounter{secnumdepth}{5}			
+%\setcounter{tocdepth}{5}		
+
+%Eigene Commands
+\newcommand{\myFrontmatter}{
+	\cleardoublepage
+	\pagenumbering{Roman}
+}
+\newcommand{\myMainmatter}{
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+}	
+
+\newcommand{\myRef}[1]{\footnote{Siehe: \ref{#1} \nameref{#1}}}
