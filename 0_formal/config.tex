@@ -10,7 +10,7 @@
 \usepackage{graphicx}									%Bilder und PDFs
 \usepackage[hidelinks=true]{hyperref}					%Hyperlinks ohne Markierung
 \usepackage{booktabs}									%bessere Tabellen
-\usepackage[german=quotes]{csquotes} 					%correct quotes using \enquote{}
+\usepackage[german=quotes]{csquotes} 					% correct quotes using \enquote{}
 \usepackage[final]{microtype}							%Microtype (bessere darstellung der Wörter)
 \usepackage{todonotes}									%To do Comments
 \usepackage{float}										%Figure placement
@@ -21,6 +21,8 @@
 \usepackage{caption}									%better Captions
 \usepackage{booktabs} 									%Nicer Tabs
 \usepackage{array}										%
+\usepackage{listings}									%Code in Text
+
 
 %ALGORITHMS
 \usepackage{algorithm}
@@ -28,11 +30,39 @@
 \renewcommand{\listalgorithmname}{Algorithmenverzeichnis}
 \floatname{algorithm}{Algorithmus}
 
-%Seitennummerierung
-\usepackage{scrlayer-scrpage}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+	language=Java,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=3
+}
+
+%Fuß und Kopfzeilen
+\usepackage[headsepline, footsepline]{scrlayer-scrpage}
 \pagestyle{scrheadings}
+\automark[section]{section}
 \clearpairofpagestyles
+
+\setkomafont{pagehead}{\sffamily\small\upshape}
+\setkomafont{pagefoot}{\sffamily\footnotesize\upshape}
+
 \ofoot{\pagemark}	
+\ifoot{DHBW Mannheim}
+
 
 %Zitierung
 \usepackage[backend=biber, autocite=footnote, style=authoryear, dashed=false]{biblatex}
@@ -43,13 +73,15 @@
 \usepackage[printonlyused]{acronym}
 
 %Formatierung
-\linespread{1.4}										%Zeilenabstand		
+\linespread{1.15}										%Zeilenabstand		
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}	
 \usepackage{subfigure}
 \usepackage[paper=a4paper, left={2.5cm}, right={2.5cm}, top={2.5cm}]{geometry}
 %\setcounter{secnumdepth}{5}			
 %\setcounter{tocdepth}{5}		
+\setcounter{biburllcpenalty}{7000}					%Linebreak in URL
+\setcounter{biburlucpenalty}{8000}					%Linebreak in URL
 
 %Eigene Commands
 \newcommand{\myFrontmatter}{
@@ -60,6 +92,9 @@
 	\cleardoublepage
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
+	\ihead{\headmark}
 }	
+\newcommand{\myFootRef}[1]{\footnote{Siehe: \ref{#1} \nameref{#1}}}
+\newcommand{\myLineRef}[1]{\ref{#1} \nameref{#1}}
 
-\newcommand{\myRef}[1]{\footnote{Siehe: \ref{#1} \nameref{#1}}}
+\newcommand{\myQuote}[1]{\glqq #1\grqq}
