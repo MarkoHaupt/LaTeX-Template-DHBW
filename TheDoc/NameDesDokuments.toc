@@ -1,0 +1,12 @@
+\babel@toc {ngerman}{}\relax 
+\contentsline {section}{Eidesstattliche Erklärung}{I}{section*.1}%
+\contentsline {section}{Hinweis zur geschlechtergerechten Sprache}{II}{section*.2}%
+\contentsline {section}{Abstract}{III}{section*.3}%
+\contentsline {section}{Inhaltsverzeichnis}{IV}{section*.5}%
+\contentsline {section}{Abkürzungsverzeichnis}{V}{section*.6}%
+\contentsline {section}{Abbildungsverzeichnis}{VI}{section*.7}%
+\contentsline {section}{\numberline {1}Beispielsection}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Subsection}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Noch eine}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {A}Anhang}{5}{appendix.A}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
